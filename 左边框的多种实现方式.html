@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Title</title>
+		<style>
+			body {
+				display: flex;
+				flex-wrap: wrap;
+			}
+
+			div {
+				position: relative;
+				width: 200px;
+				height: 60px;
+				text-align: center;
+				line-height: 60px;
+				background: #ddd;
+				margin: 0 20px 20px 0;
+				box-sizing: border-box;
+			}
+
+			div:nth-child(1) {
+				border-left: 5px solid deeppink;
+			}
+
+			div:nth-child(2)::after {
+				content: '';
+				width: 5px;
+				height: 60px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				background: deeppink;
+			}
+
+			div:nth-child(3) {
+				box-shadow: -5px 0 0 0 deeppink;
+			}
+
+			div:nth-child(4) {
+				box-shadow: inset 5px 0 0 0 deeppink;
+			}
+
+			div:nth-child(5) {
+				filter: drop-shadow(-5px 0 0 deeppink);
+			}
+
+			div:nth-child(6) {
+				font-size: 12px;
+				background-image: linear-gradient(90deg, deeppink 0, deeppink 5px, transparent 5px);
+			}
+
+			div:nth-child(7) {
+				outline: 5px solid deeppink;
+			}
+
+			div:nth-child(7)::after {
+				position: absolute;
+				content: 'outline实现';
+				top: -5px;
+				bottom: -5px;
+				right: -5px;
+				left: 0;
+				background-color: #ddd;
+			}
+
+			div:nth-child(8) {
+				width: 205px;
+				background-color: deeppink;
+				overflow-y: scroll;
+			}
+
+			div:nth-child(8)::-webkit-scrollbar {
+				width: 200px;
+				background-color: #ddd;
+			}
+
+			div:nth-child(9) {
+				overflow: hidden;
+			}
+
+			div:nth-child(9)::before {
+				position: absolute;
+				content: '____';
+				font-size: 40px;
+				bottom: 0;
+				text-decoration: underline;
+				color: deeppink;
+				line-height: 60px;
+				transform: rotate(90deg);
+				right: 142px;
+			}
+
+			div:nth-child(10) {
+				overflow: hidden;
+			}
+
+			div:nth-child(10)::first-letter {
+				width: 5px;
+				left: 0;
+				top: 0;
+				padding: 34px 0;
+				margin-left: -145px;
+				color: transparent;
+				background-color: deeppink;
+			}
+		</style>
+	</head>
+	<body>
+		<div>border</div>
+		<div>after</div>
+		<div>外box-shadow</div>
+		<div>内box-shadow</div>
+		<div>filter: drop-shadow</div>
+		<div>background-image: linear-gradient</div>
+		<div>outline</div>
+		<div></div>
+		<div>下划线</div>
+		<div>first-letter</div>
+	</body>
+</html>
