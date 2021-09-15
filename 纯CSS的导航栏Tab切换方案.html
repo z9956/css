@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Title</title>
+		<style>
+			input {
+				display: none;
+			}
+
+			.nav1:checked ~ .content > div {
+				display: none;
+			}
+
+			.nav1:checked ~ .content > div:first-child {
+				display: block;
+			}
+			.nav2:checked ~ .content > div {
+				display: none;
+			}
+
+			.nav2:checked ~ .content > div:last-child {
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<input class="nav1" id="li1" type="radio" name="nav" />
+			<input class="nav2" id="li2" type="radio" name="nav" />
+			<ul class="nav">
+				<li class="active"><label for="li1">列表1</label></li>
+				<li><label for="li2">列表2</label></li>
+			</ul>
+			<div class="content">
+				<div class="content1">列表1内容:123456</div>
+				<div class="content1">列表2内容:abcdefgkijkl</div>
+			</div>
+		</div>
+	</body>
+</html>
